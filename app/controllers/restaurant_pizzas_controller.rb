@@ -8,7 +8,7 @@ class RestaurantPizzasController < ApplicationController
     def create
         restaurant_pizza = RestaurantPizza.create!(restaurant_pizzas_params)
     
-        render json: restaurant_pizza.pizza, status: :created
+        render json: restaurant_pizza.pizza, except: [:created_at,:updated_at]status: :created
     
       end
     #   def destroy
